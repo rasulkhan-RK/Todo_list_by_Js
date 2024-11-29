@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #dcf5ea;
+}
+
+/* Todo_Container CSS */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+.container .todo_container {
+  margin-top: 20px;
+  padding: 10px;
+  max-width: 850px;
+  height: 600px;
+  overflow: auto;
+  background: #ffff;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+    rgb(209, 213, 219) 0px 0px 0px 1px inset;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 5px;
+  align-items: center;
+}
+.todo_container .todo_heading h1 {
+  font-size: 40px;
+  font-weight: 400;
+  text-decoration: underline;
+}
+.todo_container .todo_heading marquee {
+  font-size: 15px;
+  color: rgb(146, 139, 139);
+  padding: 5px 0;
+}
+.todo_container .todo_input {
+  width: 70%;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  padding: 7px 5px;
+  display: flex;
+  border-radius: 8px;
+}
+.todo_container .todo_input input {
+  width: 100%;
+  padding: 5px 0;
+  font-size: 15px;
+  padding-left: 10px;
+  border: none;
+  outline: none;
+}
+.todo_container .todo_input button {
+  width: 80px;
+  border-radius: 8px;
+  border: none;
+  background-color: #73ec68;
+  color: #fff;
+  font-weight: 500;
+  outline: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+.todo_container .todo_input button:hover {
+  background-color: #5ed35c;
+  font-weight: 400;
+}
+
+/* Todo_lists CSS */
+
+.container .todo_lists {
+  width: 70%;
+  max-width: 680px;
+  border-radius: 5px;
+
+  /* border: 1px solid; */
+}
+.todo_list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+    rgb(209, 213, 219) 0px 0px 0px 1px inset;
+  padding: 0px 0;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+.list_input {
+  width: 85%;
+}
+
+.text_input {
+  width: 90%;
+  padding: 8px 5px;
+  border: none;
+  font-size: 14px;
+  outline: none;
+  overflow-y: auto;
+  text-transform: capitalize;
+  background-color: transparent;
+}
+.list_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.checkbox_Input {
+  cursor: pointer;
+  text-decoration: line-through;
+}
+.complete {
+  text-decoration: line-through;
+}
+.disabled {
+  opacity: 0.1;
+  visibility: hidden;
+}
+button {
+  width: 45px;
+  padding: 8px 5px;
+  border: none;
+  cursor: pointer;
+  background: none;
+  font-size: 16px;
+}
+button:nth-last-child(2) {
+  background-color: #64eadb;
+}
+button:nth-last-child(2):hover {
+  background-color: #05c8b2;
+}
+button:nth-last-child(1) {
+  background-color: #f34b4b;
+}
+button:nth-last-child(1):hover {
+  background-color: #f00505;
+}
+
+/* Media Query */
+
+@media screen and (max-width: 1200px) {
+  .todo_container .todo_input {
+    padding: 5px 0px;
+    max-width: 1100px;
+    width: 90%;
+  }
+  .todo_container .todo_input input {
+    font-size: 20px;
+  }
+  .todo_container .todo_input button {
+    font-size: 20px;
+    width: 110px;
+  }
+  .todo_container .todo_lists {
+    width: 90%;
+    max-width: 700px;
+  }
+  .todo_container .todo_lists .todo_list .list_btn {
+    margin-left: 9px;
+  }
+  .todo_container .todo_lists .todo_list input,
+  .todo_container .todo_lists .todo_list button {
+    font-size: 17px;
+  }
+  .todo_container .todo_lists .todo_list button:last-child {
+    border-radius: 0 5px 5px 0px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+  .todo_container .todo_input {
+    width: 100%;
+  }
+  .todo_container .todo_lists {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .todo_container .todo_input {
+    padding: 3px 0;
+  }
+  .todo_container .todo_input input,
+  .todo_container .todo_input button {
+    font-size: 15px;
+  }
+  .todo_container .todo_input button {
+    width: 80px;
+  }
+  .todo_container .todo_lists {
+    font-size: 12px;
+    width: 100%;
+  }
+  .todo_container .todo_lists .todo_list {
+    padding: 0px 3px;
+  }
+  .todo_container .todo_lists input {
+    font-size: 10px;
+    padding: 3px;
+  }
+  .todo_container .todo_lists button {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .todo_container .todo_lists .todo_list {
+    padding: 1px 0;
+    width: 100%;
+  }
+  .todo_container .todo_lists .todo_list input {
+    font-size: 13px;
+    max-width: 150px;
+  }
+  .todo_container .todo_lists .todo_list button {
+    font-size: 13px;
+    width: 35px;
+  }
+}
+@media screen and (max-width: 328px) {
+  .todo_container .todo_lists .todo_list input {
+    max-width: 250px;
+  }
+  .todo_container .todo_lists .todo_list input:first-child {
+    display: none;
+  }
+  .todo_container .todo_lists .todo_list button {
+    width: 27px;
+  }
+}
